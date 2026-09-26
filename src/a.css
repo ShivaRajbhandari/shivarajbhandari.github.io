@@ -199,3 +199,11 @@ a.inline-chip:hover{color:var(--accent)}
 .places li.active strong{color:var(--accent)}
 
 .earlier .tip{width:min(340px,80vw)}
+
+/* ---------- Final QA fixes ---------- */
+body{overflow-x:clip}
+.block,.contact{grid-template-columns:240px minmax(0,1fr)}
+@media (max-width:900px){.block,.contact{grid-template-columns:minmax(0,1fr)}figcaption{text-align:left}}
+.contact-list li{grid-template-columns:100px minmax(0,1fr)}
+.contact-list a{overflow-wrap:anywhere}
+@media (max-width:560px){.contact-list li{grid-template-columns:78px minmax(0,1fr);font-size:16px}.contact-list a{justify-self:stretch}}
