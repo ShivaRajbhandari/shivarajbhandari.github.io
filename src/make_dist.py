@@ -1,0 +1,38 @@
+import pathlib, re, shutil
+d = pathlib.Path(__file__).parent
+out = d.parent / "site-live"
+if out.exists(): shutil.rmtree(out)
+(out/"img").mkdir(parents=True); (out/"src").mkdir()
+html = (d/"a.html").read_text()
+
+desc = "Shiva Rajbhandari builds institutions and policy at the intersection of climate, democracy and innovation. Master of Public Policy candidate at UNC–Chapel Hill, from Boise, Idaho."
+fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%2316271F'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='26' text-anchor='middle' fill='%23EDF1E7'%3ESR%3C/text%3E%3C/svg%3E"
+head_extra = f'''<meta property="og:type" content="website">
+<meta property="og:title" content="Shiva Rajbhandari">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="https://shivarajbhandari.com/">
+<meta property="og:image" content="https://shivarajbhandari.com/img/headshot.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://shivarajbhandari.com/">
+<link rel="icon" href="{fav}">
+<meta name="theme-color" content="#E3E9DC">
+'''
+html = re.sub(r"<title>.*?</title>", "<title>Shiva Rajbhandari</title>", html, count=1, flags=re.S)
+html = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{desc}">', html, count=1)
+html = html.replace("<script>document.documentElement.classList.add('js')</script>", head_extra + "<script>document.documentElement.classList.add('js')</script>", 1)
+(out/"index.html").write_text(html)
+
+used = sorted(set(re.findall(r"img/([\w\-\.]+\.jpg)", html)))
+for f in used: shutil.copy(d/"img"/f, out/"img"/f)
+(out/"CNAME").write_text("shivarajbhandari.com\n")
+(out/".nojekyll").write_text("")
+for f in ("body.html","a.css","build.py","gen_map.py","make_dist.py","map.svg.html"): shutil.copy(d/f, out/"src"/f)
+(out/"README.md").write_text("""# shivarajbhandari.com
+
+Personal site for Shiva Rajbhandari. A single static page, no build tools required to host it.
+
+- `index.html` is the built page (CSS and JS inline). `img/` holds its images.
+- `src/` holds the editable pieces: `body.html` (content), `a.css` (styles), `gen_map.py` (research map), `build.py` and `make_dist.py` (assemble the page).
+- Hosted on GitHub Pages. `CNAME` points the custom domain.
+""")
+print("images:", used); print("size KB:", (out/"index.html").stat().st_size//1024)
