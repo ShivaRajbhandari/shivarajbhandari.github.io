@@ -1,4 +1,4 @@
-# shivarajbhandari.com
+# www.shivarajbhandari.com
 
 Personal site for Shiva Rajbhandari. A single static page, no build tools required to host it.
 

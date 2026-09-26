@@ -1,8 +1,11 @@
 import pathlib, re, shutil
 d = pathlib.Path(__file__).parent
 out = d.parent / "site-live"
-if out.exists(): shutil.rmtree(out)
-(out/"img").mkdir(parents=True); (out/"src").mkdir()
+if out.exists():
+    for c in out.iterdir():
+        if c.name == ".git": continue
+        shutil.rmtree(c) if c.is_dir() else c.unlink()
+(out/"img").mkdir(parents=True, exist_ok=True); (out/"src").mkdir(exist_ok=True)
 html = (d/"a.html").read_text()
 
 desc = "Shiva Rajbhandari builds institutions and policy at the intersection of climate, democracy and innovation. Master of Public Policy candidate at UNC–Chapel Hill, from Boise, Idaho."
@@ -10,10 +13,10 @@ fav = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0
 head_extra = f'''<meta property="og:type" content="website">
 <meta property="og:title" content="Shiva Rajbhandari">
 <meta property="og:description" content="{desc}">
-<meta property="og:url" content="https://shivarajbhandari.com/">
-<meta property="og:image" content="https://shivarajbhandari.com/img/headshot.jpg">
+<meta property="og:url" content="https://www.shivarajbhandari.com/">
+<meta property="og:image" content="https://www.shivarajbhandari.com/img/headshot.jpg">
 <meta name="twitter:card" content="summary">
-<link rel="canonical" href="https://shivarajbhandari.com/">
+<link rel="canonical" href="https://www.shivarajbhandari.com/">
 <link rel="icon" href="{fav}">
 <meta name="theme-color" content="#E3E9DC">
 '''
@@ -24,10 +27,10 @@ html = html.replace("<script>document.documentElement.classList.add('js')</scrip
 
 used = sorted(set(re.findall(r"img/([\w\-\.]+\.jpg)", html)))
 for f in used: shutil.copy(d/"img"/f, out/"img"/f)
-(out/"CNAME").write_text("shivarajbhandari.com\n")
+(out/"CNAME").write_text("www.shivarajbhandari.com\n")
 (out/".nojekyll").write_text("")
 for f in ("body.html","a.css","build.py","gen_map.py","make_dist.py","map.svg.html"): shutil.copy(d/f, out/"src"/f)
-(out/"README.md").write_text("""# shivarajbhandari.com
+(out/"README.md").write_text("""# www.shivarajbhandari.com
 
 Personal site for Shiva Rajbhandari. A single static page, no build tools required to host it.
 
