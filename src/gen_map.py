@@ -77,7 +77,7 @@ out = [f'<svg class="map" viewBox="{vb[0]:.0f} {vb[1]:.0f} {vb[2]:.0f} {vb[3]:.0
        '<desc id="map-d">A world map with Mexico, Peru, Chile, Uruguay, Nepal and Egypt highlighted.</desc>',
        f'<path class="land" d="{"".join(back)}"/>']
 for n in HIGH:
-    cls = 'hl alt' if n == 'Egypt' else 'hl'
+    cls = 'hl'
     out.append(f'<path class="{cls}" data-c="{n}" d="{high[n]}"><title>{n}</title></path>')
 for n, (lo, la) in pins.items():
     x, y = P(lo, la)
