@@ -65,7 +65,7 @@ h3{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.25}
 .paper-grid{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .paper{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px}
 .paper p:not(.tag){margin:10px 0 14px;font-size:15px;color:var(--muted)}
-.paper a,.orcid a{color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
+.now-grid p a,.paper a,.orcid a{color:var(--accent);font-weight:600;text-decoration:none;border-bottom:1px solid currentColor}
 .classes{grid-column:2;margin-top:10px}
 .classes ul{list-style:none;padding:0;margin-top:12px}
 .classes li{display:grid;grid-template-columns:280px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
