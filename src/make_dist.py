@@ -41,6 +41,7 @@ for f in used: shutil.copy(d/"img"/f, out/"img"/f)
 shutil.copy(d/"img"/"og-card.jpg", out/"img"/"og-card.jpg")
 import datetime
 (out/"sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>https://www.shivarajbhandari.com/</loc><lastmod>{datetime.date.today().isoformat()}</lastmod></url>\n</urlset>\n')
+(out/"googlec29395e74e8d042a.html").write_text("google-site-verification: googlec29395e74e8d042a.html")
 (out/"robots.txt").write_text("User-agent: *\nAllow: /\n\nSitemap: https://www.shivarajbhandari.com/sitemap.xml\n")
 (out/"CNAME").write_text("www.shivarajbhandari.com\n")
 (out/".nojekyll").write_text("")
