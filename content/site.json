@@ -1,0 +1,61 @@
+{
+  "seo": {
+    "title": "Shiva Rajbhandari | Public policy, climate and democracy",
+    "description": "Shiva Rajbhandari builds institutions and policy at the intersection of climate, democracy and innovation. MPP candidate at UNC–Chapel Hill, from Boise.",
+    "image_alt": "Shiva Rajbhandari: climate, democracy, innovation"
+  },
+  "brand": {
+    "mark": "SR",
+    "name": "Shiva Rajbhandari"
+  },
+  "nav": {
+    "links": [
+      {
+        "label": "About",
+        "target": "#about"
+      },
+      {
+        "label": "Building",
+        "target": "#building"
+      },
+      {
+        "label": "Research",
+        "target": "#research"
+      },
+      {
+        "label": "Recognition",
+        "target": "#recognition"
+      }
+    ],
+    "jump_label": "Jump to bottom",
+    "jump_target": "#contact"
+  },
+  "footer": {
+    "copyright": "© 2026 Shiva Rajbhandari",
+    "back_to_top": "Back to top"
+  },
+  "theme": {
+    "light": {
+      "bg": "#E3E9DC",
+      "paper": "#EDF1E7",
+      "ink": "#16271F",
+      "muted": "#4F6055",
+      "line": "#C3CDB9",
+      "accent": "#C4502F",
+      "river": "#2D5B48"
+    },
+    "dark": {
+      "bg": "#1F3A2E",
+      "paper": "#274637",
+      "ink": "#EEF1E6",
+      "muted": "#AEC1B4",
+      "line": "#3A5A49",
+      "accent": "#F49C7A",
+      "river": "#BDE6C8"
+    }
+  },
+  "fonts": {
+    "heading": "Fraunces",
+    "body": "Inter"
+  }
+}

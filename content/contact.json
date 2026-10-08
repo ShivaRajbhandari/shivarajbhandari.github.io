@@ -1,0 +1,23 @@
+{
+  "number": "05",
+  "heading": "Say hello",
+  "big": "If you’re working on something ambitious and need someone who will run with it, hit my line.",
+  "items": [
+    {
+      "label": "Email",
+      "text": "shiva.a.rajbhandari@gmail.com",
+      "url": "mailto:shiva.a.rajbhandari@gmail.com"
+    },
+    {
+      "label": "Phone",
+      "text": "(208) 809-3845",
+      "url": "tel:+12088093845"
+    },
+    {
+      "label": "LinkedIn",
+      "text": "linkedin.com/in/shiva-rajbhandari",
+      "url": "https://www.linkedin.com/in/shiva-rajbhandari/"
+    }
+  ],
+  "background": "/img/IMG_2174.jpg"
+}

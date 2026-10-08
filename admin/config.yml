@@ -1,0 +1,294 @@
+backend:
+  name: github
+  repo: ShivaRajbhandari/shivarajbhandari.github.io
+  branch: main
+  base_url: https://holy-boat-208c.shiva-a-rajbhandari.workers.dev   # GitHub login helper (Cloudflare Worker)
+  auth_endpoint: auth
+  commit_messages:
+    update: "Update {{collection}} “{{slug}}”"
+publish_mode: simple
+media_folder: img
+public_folder: /img
+site_url: https://www.shivarajbhandari.com
+display_url: https://www.shivarajbhandari.com
+locale: en
+
+collections:
+  - name: pages
+    label: Website
+    files:
+      - label: "Top of page"
+        name: home
+        file: content/home.json
+        format: json
+        fields:
+          - {label: Small line above name, name: eyebrow, widget: string}
+          - {label: First name, name: first_name, widget: string}
+          - {label: "Last name (shown in the accent color)", name: last_name, widget: string}
+          - {label: Big line, name: lede, widget: string}
+          - {label: Smaller line, name: sub, widget: string}
+          - label: Main button
+            name: primary_button
+            widget: object
+            fields:
+              - {label: Text, name: label, widget: string}
+              - {label: "Goes to (e.g. #now or a web address)", name: target, widget: string}
+          - label: Second button
+            name: secondary_button
+            widget: object
+            fields:
+              - {label: Text, name: label, widget: string}
+              - {label: "Goes to (e.g. #contact or a web address)", name: target, widget: string}
+          - label: Portrait
+            name: portrait
+            widget: object
+            fields:
+              - {label: Photo, name: image, widget: image, choose_url: false}
+              - {label: Initials (shown if the photo is missing), name: initials, widget: string}
+              - {label: Photo description (for screen readers), name: alt, widget: string}
+          - {label: Name of the numbers row (for screen readers), name: facts_label, widget: string}
+          - label: "Numbers row"
+            name: facts
+            widget: list
+            summary: "{{fields.value}} · {{fields.text}}"
+            fields:
+              - {label: Big number, name: value, widget: string}
+              - {label: What it means, name: text, widget: string}
+
+      - label: "Currently"
+        name: now
+        file: content/now.json
+        format: json
+        fields:
+          - {label: Section number, name: number, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - label: Cards
+            name: cards
+            widget: list
+            summary: "{{fields.tag}} · {{fields.title}}"
+            fields:
+              - {label: Small label, name: tag, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Text, name: body, widget: text, hint: "Links: [link text](https://…)   Bold: **bold**   Italic: *italic*"}
+          - {label: Photo band under this section, name: photo_after, widget: image, required: false, choose_url: false}
+
+      - label: "About"
+        name: about
+        file: content/about.json
+        format: json
+        fields:
+          - {label: Section number, name: number, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Big opening line, name: big, widget: text, hint: "Links: [link text](https://…)   Bold: **bold**"}
+          - {label: Paragraphs, name: body, widget: text, hint: "Leave a blank line between paragraphs."}
+          - label: Details list
+            name: details
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - {label: Label (Education, Skills…), name: label, widget: string}
+              - {label: Text, name: text, widget: text}
+
+      - label: "Building (timeline)"
+        name: building
+        file: content/building.json
+        format: json
+        fields:
+          - {label: Section number, name: number, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - label: "Timeline entries (drag to reorder)"
+            name: items
+            widget: list
+            summary: "{{fields.when}} · {{fields.title}}"
+            fields:
+              - {label: When, name: when, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Text, name: body, widget: text, hint: "Links: [link text](https://…)"}
+
+      - label: "Research"
+        name: research
+        file: content/research.json
+        format: json
+        fields:
+          - {label: Section number, name: number, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - label: "Papers and articles"
+            name: papers
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - {label: Small label, name: tag, widget: string}
+              - {label: Award line (optional), name: award, widget: string, required: false}
+              - {label: Title, name: title, widget: string}
+              - {label: Summary, name: body, widget: text, hint: "Links: [link text](https://…)"}
+              - {label: Advisors line, name: advisors, widget: string, required: false}
+              - {label: Link text (optional), name: link_text, widget: string, required: false}
+              - {label: Link address, name: link_url, widget: string, required: false}
+          - label: "Course I taught"
+            name: course
+            widget: object
+            fields:
+              - {label: Small label, name: tag, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: body, widget: text}
+              - {label: Mentors line, name: advisors, widget: string, required: false}
+          - label: "Map and places"
+            name: map
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - label: Places
+                name: places
+                widget: list
+                summary: "{{fields.country}}"
+                hint: "The map highlights these six countries only. To add another country to the map itself, ask Claude."
+                fields:
+                  - {label: Country, name: country, widget: select, options: [Mexico, Peru, Chile, Uruguay, Nepal, Egypt]}
+                  - {label: Text, name: text, widget: text}
+          - label: "Classes"
+            name: classes
+            widget: object
+            fields:
+              - {label: Heading, name: heading, widget: string}
+              - label: Classes
+                name: items
+                widget: list
+                summary: "{{fields.code}} · {{fields.title}}"
+                fields:
+                  - {label: Course code, name: code, widget: string}
+                  - {label: Title, name: title, widget: string}
+                  - {label: Description, name: text, widget: text}
+          - label: "Earlier projects (small chips)"
+            name: earlier
+            widget: object
+            fields:
+              - {label: Label, name: label, widget: string}
+              - label: Projects
+                name: items
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - {label: Chip text, name: label, widget: string}
+                  - {label: Link address, name: url, widget: string}
+                  - {label: Pop-up title, name: tip_title, widget: string, required: false}
+                  - {label: Pop-up text, name: tip_text, widget: text, required: false}
+          - {label: Photo band under this section, name: photo_after, widget: image, required: false, choose_url: false}
+
+      - label: "Scholarships and recognition"
+        name: recognition
+        file: content/recognition.json
+        format: json
+        fields:
+          - {label: Section number, name: number, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - label: "Featured (big chips)"
+            name: featured
+            widget: list
+            summary: "{{fields.name}} {{fields.year}}"
+            fields: &chip
+              - {label: Name, name: name, widget: string}
+              - {label: Year (optional), name: year, widget: string, required: false}
+              - {label: Pop-up title, name: tip_title, widget: string, required: false}
+              - {label: Pop-up text, name: tip_text, widget: text, required: false}
+          - label: "More (smaller chips)"
+            name: more
+            widget: list
+            summary: "{{fields.name}} {{fields.year}}"
+            fields: *chip
+          - {label: Label for the earlier line, name: earlier_label, widget: string}
+          - label: "Earlier"
+            name: earlier
+            widget: list
+            summary: "{{fields.name}}"
+            fields: *chip
+          - {label: Hint under the chips, name: hint, widget: string, required: false}
+
+      - label: "Contact"
+        name: contact
+        file: content/contact.json
+        format: json
+        fields:
+          - {label: Section number, name: number, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Big line, name: big, widget: text}
+          - label: Contact lines
+            name: items
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - {label: Label (Email, Phone…), name: label, widget: string}
+              - {label: Text shown, name: text, widget: string}
+              - {label: "Link (mailto:you@example.com, tel:+1…, or a web address)", name: url, widget: string}
+          - {label: Background photo, name: background, widget: image, required: false, choose_url: false}
+
+      - label: "Site settings, colors and fonts"
+        name: site
+        file: content/site.json
+        format: json
+        fields:
+          - label: "Search results and link previews"
+            name: seo
+            widget: object
+            fields:
+              - {label: Page title, name: title, widget: string}
+              - {label: Description (shows on Google), name: description, widget: text}
+              - {label: "Link-preview picture description", name: image_alt, widget: string}
+          - label: "Name in the top bar"
+            name: brand
+            widget: object
+            fields:
+              - {label: Initials, name: mark, widget: string}
+              - {label: Name, name: name, widget: string}
+          - label: "Menu"
+            name: nav
+            widget: object
+            fields:
+              - label: Links
+                name: links
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - {label: Text, name: label, widget: string}
+                  - {label: "Goes to (e.g. #about)", name: target, widget: string}
+              - {label: "Last link text", name: jump_label, widget: string}
+              - {label: "Last link goes to", name: jump_target, widget: string}
+          - label: "Bottom of page"
+            name: footer
+            widget: object
+            fields:
+              - {label: Copyright line, name: copyright, widget: string}
+              - {label: "Back-to-top text", name: back_to_top, widget: string}
+          - label: "Colors (light mode)"
+            name: theme
+            widget: object
+            collapsed: true
+            summary: "Click to change colors"
+            fields:
+              - label: Light mode
+                name: light
+                widget: object
+                fields:
+                  - {label: Page background, name: bg, widget: color, allowInput: true}
+                  - {label: Cards and panels, name: paper, widget: color, allowInput: true}
+                  - {label: Text, name: ink, widget: color, allowInput: true}
+                  - {label: Softer text, name: muted, widget: color, allowInput: true}
+                  - {label: Lines and borders, name: line, widget: color, allowInput: true}
+                  - {label: "Accent (buttons, highlights)", name: accent, widget: color, allowInput: true}
+                  - {label: "Second accent (map, links)", name: river, widget: color, allowInput: true}
+              - label: "Dark mode (for visitors whose device is set to dark)"
+                name: dark
+                widget: object
+                fields:
+                  - {label: Page background, name: bg, widget: color, allowInput: true}
+                  - {label: Cards and panels, name: paper, widget: color, allowInput: true}
+                  - {label: Text, name: ink, widget: color, allowInput: true}
+                  - {label: Softer text, name: muted, widget: color, allowInput: true}
+                  - {label: Lines and borders, name: line, widget: color, allowInput: true}
+                  - {label: Accent, name: accent, widget: color, allowInput: true}
+                  - {label: Second accent, name: river, widget: color, allowInput: true}
+          - label: "Fonts"
+            name: fonts
+            widget: object
+            fields:
+              - {label: "Headings font", name: heading, widget: select, options: [Fraunces, Playfair Display, Lora, Source Serif 4], default: Fraunces}
+              - {label: "Body font", name: body, widget: select, options: [Inter, DM Sans, Source Sans 3, Work Sans], default: Inter}

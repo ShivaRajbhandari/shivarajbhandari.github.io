@@ -1,0 +1,107 @@
+{
+  "number": "03",
+  "heading": "Research",
+  "papers": [
+    {
+      "tag": "Honors thesis · 2026",
+      "award": "Best Thesis Award · UNC Department of Public Policy",
+      "title": "Movement-Mediated Vertical Policy Feedback",
+      "body": "How can local governments advance climate policy at higher levels? Drawing on 41 interviews with organizers and officials in Austin, Charlotte and Portland, I argue that cities do it, often without meaning to, by resourcing and channeling social movements.",
+      "advisors": "Advisors: Dr. Angel Hsu and Dr. Elizabeth Korver-Glenn",
+      "link_text": "Read the thesis",
+      "link_url": "https://doi.org/10.17615/AKR4-A183"
+    },
+    {
+      "tag": "Article · 2026",
+      "award": "",
+      "title": "Leaderless But Not Powerless",
+      "body": "Why did Nepal’s Discord-organized Gen Z uprising produce lasting electoral change when peer movements collapsed? Built on interviews with 23 activists and five politicians during an independent study in Kathmandu, supported by the Morehead-Cain Lovelace Fund for Discovery.",
+      "advisors": "Advisor: Dr. Evelyne Huber",
+      "link_text": "Read the article",
+      "link_url": "https://doi.org/10.17615/FT5C-AV12"
+    }
+  ],
+  "course": {
+    "tag": "A course I designed and taught · Spring 2026",
+    "title": "Resistance to Authoritarianism",
+    "body": "Through UNC’s Carolina Student Training and Research program (C-START), I taught my peers a one-credit course I built from my own research. After trips to Chile, Uruguay, Peru and Mexico, I designed a semester of weekly two-hour seminars on how movements have resisted and outlasted authoritarian rule, using primary sources, documentary film and guest speakers, and asked what they can teach us about defending democratic institutions.",
+    "advisors": "Mentors: Professor Gabrielle Calvocoressi and Dr. Evelyne Huber"
+  },
+  "map": {
+    "heading": "Where my work has taken me",
+    "places": [
+      {
+        "country": "Mexico",
+        "text": "Full-time policy research in Mexico City, 2026."
+      },
+      {
+        "country": "Peru",
+        "text": "Research on how movements resisted authoritarian rule, 2025."
+      },
+      {
+        "country": "Chile",
+        "text": "Study abroad and archival research in Santiago, 2025."
+      },
+      {
+        "country": "Uruguay",
+        "text": "Research on how movements resisted authoritarian rule, 2025."
+      },
+      {
+        "country": "Nepal",
+        "text": "Independent study of the Gen Z uprising, with 28 interviews, winter 2025–26."
+      },
+      {
+        "country": "Egypt",
+        "text": "Observer at the COP27 U.N. climate summit for the League of Women Voters, 2022."
+      }
+    ]
+  },
+  "classes": {
+    "heading": "Classes that shaped me",
+    "items": [
+      {
+        "code": "HBEH 748",
+        "title": "Design Thinking for the Public Good",
+        "text": "Ran listening sessions and mapped the ecosystem around the Durham Arts Council to find out why many residents don’t realize it’s free and open to all."
+      },
+      {
+        "code": "PLCY 340H",
+        "title": "Justice in Public Policy",
+        "text": "An honors seminar applying moral philosophy to live policy debates, with weekly essays weighing utilitarian, deontological and paternalism arguments on cases from the Chevron ruling to social media rules for children."
+      },
+      {
+        "code": "POLI 710",
+        "title": "Political Parties",
+        "text": "Graduate seminar on how parties organize democratic politics and how party systems change. My final paper designs a study of when networked protest movements reshape party systems, building on my Nepal fieldwork."
+      },
+      {
+        "code": "SCLL 190",
+        "title": "Courageous Conversations: Israel & Palestine",
+        "text": "A course built around dialogue across deep disagreement, using the Israel–Palestine conflict as its case."
+      },
+      {
+        "code": "PLCY 460 · 581",
+        "title": "Quantitative Analysis & Research Design",
+        "text": "Stata, R and the habit of asking “compared to what?”"
+      }
+    ]
+  },
+  "earlier": {
+    "label": "Earlier",
+    "items": [
+      {
+        "label": "Idaho Climate Conversations, 2023",
+        "url": "https://www.youtube.com/@IdahoClimateConversations",
+        "tip_title": "Idaho Climate Conversations, June 2023.",
+        "tip_text": "With a friend, I drove a Prius through all 44 Idaho counties in two weeks and recorded around 130 conversations with residents about the climate changes they were seeing. Funded by a community GoFundMe. Mentor: Dr. Aly Bean. Click to watch."
+      },
+      {
+        "label": "Meridian housing study, 2023",
+        "url": "https://www.idahostatesman.com/news/local/community/west-ada/article275278751.html",
+        "tip_title": "Meridian housing study, spring 2023.",
+        "tip_text": "With three Boise State classmates, I studied housing affordability for the Meridian City Council and recommended rental assistance, subsidies for affordable housing, and rezoning near the freeway. Mentors: Dr. Vanessa Fry and Dr. Krista Paulsen. Click to read the coverage."
+      }
+    ]
+  },
+  "photo_after": "/img/IMG_8155.jpg"
+}

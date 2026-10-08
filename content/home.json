@@ -1,0 +1,39 @@
+{
+  "eyebrow": "Climate · Democracy · Innovation",
+  "first_name": "Shiva",
+  "last_name": "Rajbhandari",
+  "lede": "I study broken systems, then build better ones.",
+  "sub": "Master of Public Policy candidate at UNC–Chapel Hill. From Boise, Idaho.",
+  "primary_button": {
+    "label": "See what I’m working on",
+    "target": "#now"
+  },
+  "secondary_button": {
+    "label": "Get in touch",
+    "target": "#contact"
+  },
+  "portrait": {
+    "initials": "SR",
+    "image": "/img/headshot.jpg",
+    "alt": "Portrait of Shiva Rajbhandari"
+  },
+  "facts_label": "By the numbers",
+  "facts": [
+    {
+      "value": "$1.65M",
+      "text": "in deposit pledges for a student-run credit union"
+    },
+    {
+      "value": "$300M",
+      "text": "district budget passed, with free breakfast for every student"
+    },
+    {
+      "value": "41",
+      "text": "interviews behind an honors thesis on climate policy"
+    },
+    {
+      "value": "6",
+      "text": "countries where my work has taken me, from Nepal to Mexico"
+    }
+  ]
+}

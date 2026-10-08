@@ -1,0 +1,22 @@
+{
+  "number": "00",
+  "heading": "Currently",
+  "cards": [
+    {
+      "tag": "Chartering",
+      "title": "A student-run credit union",
+      "body": "President of [Carolina Students’ Financial](https://carolinastudentsfinancial.org), working to charter the only not-for-profit financial institution run by students at a public university. A team of 45 has raised $406K in equity and $1.65M in deposit pledges."
+    },
+    {
+      "tag": "Researching",
+      "title": "Climate policy, with an LLM",
+      "body": "Research and Policy Analyst at UNC’s [Data-Driven EnviroLab](https://datadrivenlab.org/), building a language model to read heat action plans from cities worldwide and surface what works."
+    },
+    {
+      "tag": "Designing",
+      "title": "For the public good",
+      "body": "Working with Innovate Carolina’s [Design Innovation for the Public Good](https://innovate.unc.edu/design-and-innovation-for-the-public-good/) office while finishing an accelerated Master of Public Policy in Policy Design and Innovation."
+    }
+  ],
+  "photo_after": "/img/IMG_2171.jpg"
+}

@@ -1,0 +1,24 @@
+{
+  "number": "01",
+  "heading": "About",
+  "big": "I’m from Boise, Idaho, where the public schools helped make me who I am. My dad immigrated from Nepal; my mom grew up in a small Idaho town.",
+  "body": "At UNC I studied public policy and sociology as a Morehead-Cain Scholar and graduated in 2026 with highest distinction and highest honors in public policy. I want a career designing policy that speeds the energy transition in America’s K–12 schools.\n\nI like hard problems with real stakeholders, and I seek out people who disagree with me.",
+  "details": [
+    {
+      "label": "Education",
+      "text": "UNC–Chapel Hill. B.A. with highest distinction (2026): Public Policy with highest honors, Sociology, and a minor in Mathematics. M.P.P. expected 2027."
+    },
+    {
+      "label": "Abroad",
+      "text": "Lived in Santiago, Chile, for a semester of study abroad (2025) and in Mexico City for a summer of policy research (2026). Advanced working Spanish."
+    },
+    {
+      "label": "Skills",
+      "text": "R, Stata, Tableau, Java and MAXQDA. Human-centered design. Semi-structured interviews and qualitative analysis."
+    },
+    {
+      "label": "Off the clock",
+      "text": "Prancing around in the mountains, running long distances, painting, and dancing salsa (badly)."
+    }
+  ]
+}

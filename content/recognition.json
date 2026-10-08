@@ -1,0 +1,102 @@
+{
+  "number": "04",
+  "heading": "Scholarships & recognition",
+  "featured": [
+    {
+      "name": "Truman Scholar",
+      "year": "2026",
+      "tip_title": "Harry S. Truman Scholarship.",
+      "tip_text": "The national scholarship for college juniors committed to careers in public service, with up to $30,000 toward graduate study."
+    },
+    {
+      "name": "Morehead-Cain Scholar",
+      "year": "",
+      "tip_title": "Morehead-Cain Scholarship.",
+      "tip_text": "UNC’s full merit scholarship, considered the nation’s first, covering four years plus summer enrichment programs."
+    },
+    {
+      "name": "Udall Scholar",
+      "year": "2025",
+      "tip_title": "Udall Scholarship.",
+      "tip_text": "A federal scholarship for undergraduates committed to careers in the environment, tribal public policy or Native health care."
+    },
+    {
+      "name": "Coca-Cola Scholar",
+      "year": "2023",
+      "tip_title": "Coca-Cola Scholars Program.",
+      "tip_text": "A national scholarship for about 150 graduating high school seniors chosen for leadership, service and academic promise."
+    },
+    {
+      "name": "Andrews Fellow in Environmental Policy",
+      "year": "2025",
+      "tip_title": "Richard N. L. “Pete” Andrews Fellowship.",
+      "tip_text": "UNC Public Policy’s fellowship for a rising senior dedicated to environmental policy research and service, named for Professor Pete Andrews."
+    },
+    {
+      "name": "Kathy A. Taft Award for Education Policy",
+      "year": "2026",
+      "tip_title": "Kathy Taft Education Policy Award.",
+      "tip_text": "Recognizes a public policy senior dedicated to education policy. Named for a longtime member of the North Carolina State Board of Education."
+    }
+  ],
+  "more": [
+    {
+      "name": "Buckley Public Service Scholar",
+      "year": "",
+      "tip_title": "Buckley Public Service Scholars.",
+      "tip_text": "UNC’s public service distinction: 300 hours of service, a service-learning course and a senior reflection project."
+    },
+    {
+      "name": "Carolina Research Scholar",
+      "year": "",
+      "tip_title": "Carolina Research Scholars.",
+      "tip_text": "A UNC designation for undergraduates who complete research methods coursework and hands-on research."
+    },
+    {
+      "name": "Honors Carolina Laureate",
+      "year": "",
+      "tip_title": "Honors Carolina Laureate.",
+      "tip_text": "The distinction for completing the honors program’s coursework and requirements."
+    },
+    {
+      "name": "Agora Fellow",
+      "year": "",
+      "tip_title": "Agora Fellowship.",
+      "tip_text": "A selective group of 20 UNC students who study civil discourse and moderate campus dialogue through the Program for Public Discourse."
+    },
+    {
+      "name": "Carolina Diplomacy Fellow",
+      "year": "",
+      "tip_title": "Carolina Diplomacy Fellowship.",
+      "tip_text": "A UNC program for building diplomacy knowledge, skills and career pathways."
+    },
+    {
+      "name": "Bejarano-Benning Scholar",
+      "year": "",
+      "tip_title": "Bejarano-Benning Scholarship.",
+      "tip_text": "A UNC scholarship supporting undergraduate study abroad in Latin America. Awarded for my semester at the Pontificia Universidad Católica de Chile."
+    }
+  ],
+  "earlier_label": "Earlier",
+  "earlier": [
+    {
+      "name": "U.S. Presidential Scholar",
+      "year": "",
+      "tip_title": "U.S. Presidential Scholars Program.",
+      "tip_text": "Honors about 160 graduating high school seniors nationwide for academic achievement, leadership and service."
+    },
+    {
+      "name": "National Merit Scholar",
+      "year": "",
+      "tip_title": "National Merit Scholarship Program.",
+      "tip_text": "National recognition for top scorers on the PSAT/NMSQT among high school students."
+    },
+    {
+      "name": "Teen Vogue 21 Under 21",
+      "year": "",
+      "tip_title": "Teen Vogue’s 21 Under 21, 2022.",
+      "tip_text": "Teen Vogue’s annual list of young changemakers, activists and artists making a substantial impact in their communities and the world."
+    }
+  ],
+  "hint": "Hover over, or tap, an item for details."
+}
