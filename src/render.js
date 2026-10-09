@@ -18,11 +18,12 @@
   var sep = ' &middot; ';
   var R = {esc: esc, md: md, paras: paras};
 
-  R.header = function (site) {
-    var n = site.nav || {}, b = site.brand || {};
-    return '<a class="skip" href="#main">Skip to content</a>\n<header class="nav" id="nav">\n  <a class="brand" href="#top" aria-label="' + esc(b.name) + ', home"><span class="brand-mark">' + esc(b.mark) + '</span><span class="brand-name">' + esc(b.name) + '</span></a>\n  <nav aria-label="Primary">\n' +
-      (n.links || []).map(function (l) { return '    <a href="' + esc(l.target) + '">' + esc(l.label) + '</a>\n'; }).join('') +
-      '    <a class="jump" href="' + esc(n.jump_target || '#contact') + '">' + esc(n.jump_label) + ' <span aria-hidden="true">↓</span></a>\n  </nav>\n</header>';
+  R.header = function (site, base) {
+    base = base || '';   // base '/' is used on the 404 page, where '#about' must point back to the homepage
+    var n = site.nav || {}, b = site.brand || {}, fix = function (t) { return /^#/.test(t) ? base + t : t; };
+    return '<a class="skip" href="#main">Skip to content</a>\n<header class="nav" id="nav">\n  <a class="brand" href="' + base + '#top" aria-label="' + esc(b.name) + ', home"><span class="brand-mark">' + esc(b.mark) + '</span><span class="brand-name">' + esc(b.name) + '</span></a>\n  <nav aria-label="Primary">\n' +
+      (n.links || []).map(function (l) { return '    <a href="' + esc(fix(l.target)) + '">' + esc(l.label) + '</a>\n'; }).join('') +
+      '    <a class="jump" href="' + esc(fix(n.jump_target || '#contact')) + '">' + esc(n.jump_label) + ' <span aria-hidden="true">↓</span></a>\n  </nav>\n</header>';
   };
   R.hero = function (h) {
     var p = h.portrait || {}, a = h.primary_button || {}, b = h.secondary_button || {};
@@ -70,9 +71,16 @@
       '<div class="contact-body reveal"><p class="big">' + md(d.big) + '</p><ul class="contact-list">' + (d.items || []).map(function (i) {
         return '<li><span>' + esc(i.label) + '</span><a href="' + esc(i.url) + '">' + esc(i.text) + '</a></li>'; }).join('') + '</ul></div></section>';
   };
-  R.footer = function (site) {
+  R.footer = function (site, base) {
     var f = site.footer || {};
-    return '<footer class="foot"><span>' + esc(f.copyright) + '</span><a href="#top">' + esc(f.back_to_top) + ' &uarr;</a></footer>';
+    return '<footer class="foot"><span>' + esc(f.copyright) + '</span><a href="' + (base || '') + '#top">' + esc(f.back_to_top) + ' &uarr;</a></footer>';
+  };
+  R.notFound = function (d) {
+    return '<section class="notfound" id="top"><p class="eyebrow">' + esc(d.eyebrow) + '</p><h1>' + esc(d.heading) + '</h1><p class="lede">' + md(d.text) + '</p>' +
+      (d.button_url ? '<div class="cta"><a class="btn primary" href="' + esc(d.button_url) + '">' + esc(d.button_label) + '</a></div>' : '') + '</section>';
+  };
+  R.notFoundBody = function (c) {
+    return [R.header(c.site, '/'), '<main id="main">', R.notFound(c.notfound), '</main>', R.footer(c.site, '/')].join('\n\n');
   };
   R.body = function (c, mapSvg) {
     return [R.header(c.site), '<main id="main">', R.hero(c.home), R.now(c.now), band(c.now.photo_after), R.about(c.about), R.building(c.building), R.research(c.research, mapSvg),

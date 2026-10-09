@@ -2,8 +2,8 @@
 // with the section you are editing swapped in as you type, and scrolls to that section.
 (function () {
   var R = window.SiteRender;
-  var KEYS = ['site', 'home', 'now', 'about', 'building', 'research', 'recognition', 'contact'];
-  var SECTION = {site: 'top', home: 'top', now: 'now', about: 'about', building: 'building', research: 'research', recognition: 'recognition', contact: 'contact'};
+  var KEYS = ['site', 'home', 'now', 'about', 'building', 'research', 'recognition', 'contact', 'notfound'];
+  var SECTION = {site: 'top', home: 'top', now: 'now', about: 'about', building: 'building', research: 'research', recognition: 'recognition', contact: 'contact', notfound: 'top'};
   var load = function () {
     return Promise.all(KEYS.map(function (k) { return fetch('/content/' + k + '.json?t=' + Date.now()).then(function (r) { return r.json(); }); })
       .concat([fetch('/admin/map.svg.html').then(function (r) { return r.text(); })])).then(function (res) {
@@ -18,7 +18,7 @@
         if (!this.state.data) return h('p', {style: {font: '16px system-ui', padding: '24px'}}, 'Loading preview…');
         var edited = this.props.entry.get('data'); edited = edited && edited.toJS ? edited.toJS() : {};
         var content = Object.assign({}, this.state.data.others); content[key] = edited;
-        var html = '<link rel="stylesheet" href="' + R.esc(R.fontsUrl(content.site)) + '"><style>' + R.themeCss(content.site) + '</style>' + R.body(content, this.state.data.map);
+        var html = '<link rel="stylesheet" href="' + R.esc(R.fontsUrl(content.site)) + '"><style>' + R.themeCss(content.site) + '</style>' + (key === 'notfound' ? R.notFoundBody(content) : R.body(content, this.state.data.map));
         var self = this;
         return h('div', {dangerouslySetInnerHTML: {__html: html}, ref: function (el) {
           if (!el || self._scrolled) return; self._scrolled = true;   // jump to the section being edited, once

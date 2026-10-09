@@ -207,3 +207,8 @@ body{overflow-x:clip}
 .contact-list li{grid-template-columns:100px minmax(0,1fr)}
 .contact-list a{overflow-wrap:anywhere}
 @media (max-width:560px){.contact-list li{grid-template-columns:78px minmax(0,1fr);font-size:16px}.contact-list a{justify-self:stretch}}
+
+/* 404 page */
+.notfound{max-width:1180px;margin:0 auto;padding:clamp(64px,12vw,150px) var(--gutter) clamp(72px,11vw,130px)}
+.notfound h1{margin:14px 0 20px}
+.notfound .lede{max-width:26em}

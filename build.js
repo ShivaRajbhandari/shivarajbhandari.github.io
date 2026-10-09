@@ -4,7 +4,7 @@ const fs = require('fs'), path = require('path');
 const R = require('./src/render.js');
 const root = __dirname, out = path.join(root, 'dist');
 const rd = (f) => fs.readFileSync(path.join(root, f), 'utf8');
-const names = ['site', 'home', 'now', 'about', 'building', 'research', 'recognition', 'contact'];
+const names = ['site', 'home', 'now', 'about', 'building', 'research', 'recognition', 'contact', 'notfound'];
 const c = {}; names.forEach((n) => { c[n] = JSON.parse(rd('content/' + n + '.json')); });
 const ORIGIN = rd('CNAME').trim(); const URL_ = 'https://' + ORIGIN + '/';
 const mapSvg = rd('src/map.svg.html');
@@ -56,6 +56,11 @@ ${rd('src/script.js').trim()}
 fs.rmSync(out, {recursive: true, force: true}); fs.mkdirSync(out, {recursive: true});
 const cp = (s, d) => fs.cpSync(path.join(root, s), path.join(out, d), {recursive: true});
 fs.writeFileSync(path.join(out, 'index.html'), html);
+// Page-not-found page (GitHub Pages shows 404.html for any address that doesn't exist): same design, menu and footer.
+const bs = html.indexOf('<body>\n') + 7, be = html.indexOf('<script>\n', bs);
+fs.writeFileSync(path.join(out, '404.html'), (html.slice(0, bs) + R.notFoundBody(c) + '\n' + html.slice(be))
+  .replace(`<link rel="canonical" href="${URL_}">`, '<meta name="robots" content="noindex">')
+  .replace(/<script type="application\/ld\+json">.*?<\/script>\n/, ''));
 cp('img', 'img'); cp('CNAME', 'CNAME'); cp('content', 'content');
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
 fs.writeFileSync(path.join(out, 'googlec29395e74e8d042a.html'), 'google-site-verification: googlec29395e74e8d042a.html');

@@ -221,6 +221,17 @@ collections:
               - {label: "Link (mailto:you@example.com, tel:+1…, or a web address)", name: url, widget: string}
           - {label: Background photo, name: background, widget: image, required: false, choose_url: false}
 
+      - label: "404 page (when a link is broken)"
+        name: notfound
+        file: content/notfound.json
+        format: json
+        fields:
+          - {label: Small line above the heading, name: eyebrow, widget: string}
+          - {label: Heading, name: heading, widget: string}
+          - {label: Message, name: text, widget: text, hint: "Links: [link text](https://…)"}
+          - {label: Button text, name: button_label, widget: string}
+          - {label: "Button goes to (e.g. /)", name: button_url, widget: string}
+
       - label: "Site settings, colors and fonts"
         name: site
         file: content/site.json
