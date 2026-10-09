@@ -73,7 +73,8 @@
   };
   R.footer = function (site, base) {
     var f = site.footer || {};
-    return '<footer class="foot"><span>' + esc(f.copyright) + '</span><a href="' + (base || '') + '#top">' + esc(f.back_to_top) + ' &uarr;</a></footer>';
+    var year = new Date().getFullYear();   // the page script also refreshes it in each visitor's browser, so it stays current
+    return '<footer class="foot"><span>' + esc(f.copyright).replace(/\{year\}/g, '<span data-year>' + year + '</span>') + '</span><a href="' + (base || '') + '#top">' + esc(f.back_to_top) + ' &uarr;</a></footer>';
   };
   R.notFound = function (d) {
     return '<section class="notfound" id="top"><p class="eyebrow">' + esc(d.eyebrow) + '</p><h1>' + esc(d.heading) + '</h1><p class="lede">' + md(d.text) + '</p>' +

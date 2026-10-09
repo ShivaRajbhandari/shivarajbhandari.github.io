@@ -7,3 +7,4 @@ function set(c,on){mb.querySelectorAll('[data-c="'+c+'"]').forEach(function(n){n
 mb.querySelectorAll('[data-c]').forEach(function(n){var c=n.getAttribute('data-c');
 n.addEventListener('mouseenter',function(){set(c,true)});n.addEventListener('mouseleave',function(){set(c,false)});
 n.addEventListener('click',function(){mb.querySelectorAll('.active').forEach(function(a){a.classList.remove('active')});set(c,true)})})})();
+(function(){var y=new Date().getFullYear();document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=y})})();

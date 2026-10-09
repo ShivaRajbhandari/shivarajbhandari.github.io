@@ -267,7 +267,7 @@ collections:
             name: footer
             widget: object
             fields:
-              - {label: Copyright line, name: copyright, widget: string}
+              - {label: "Copyright line (use {year} for the current year, it updates itself)", name: copyright, widget: string}
               - {label: "Back-to-top text", name: back_to_top, widget: string}
           - label: "Colors (light mode)"
             name: theme

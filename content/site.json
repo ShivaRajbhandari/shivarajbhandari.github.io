@@ -31,7 +31,7 @@
     "jump_target": "#contact"
   },
   "footer": {
-    "copyright": "© 2026 Shiva Rajbhandari",
+    "copyright": "© {year} Shiva Rajbhandari",
     "back_to_top": "Back to top"
   },
   "theme": {
