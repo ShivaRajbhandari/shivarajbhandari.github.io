@@ -286,6 +286,14 @@ collections:
                   - {label: Lines and borders, name: line, widget: color, allowInput: true}
                   - {label: Accent, name: accent, widget: color, allowInput: true}
                   - {label: Second accent, name: river, widget: color, allowInput: true}
+          - label: "Old addresses that should send visitors to the homepage"
+            name: redirects
+            widget: list
+            summary: "{{fields.from}} → {{fields.to}}"
+            hint: "Helps Google treat old or duplicate addresses as the homepage. 'From' is the old path, like /home."
+            fields:
+              - {label: "From (old path, e.g. /home)", name: from, widget: string}
+              - {label: "To (usually /)", name: to, widget: string}
           - label: "Fonts"
             name: fonts
             widget: object

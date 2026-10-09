@@ -61,5 +61,16 @@ fs.writeFileSync(path.join(out, '.nojekyll'), '');
 fs.writeFileSync(path.join(out, 'googlec29395e74e8d042a.html'), 'google-site-verification: googlec29395e74e8d042a.html');
 fs.writeFileSync(path.join(out, 'robots.txt'), 'User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ' + URL_ + 'sitemap.xml\n');
 fs.writeFileSync(path.join(out, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>' + URL_ + '</loc><lastmod>' + new Date().toISOString().slice(0, 10) + '</lastmod></url>\n</urlset>\n');
+// Old or duplicate addresses -> homepage. GitHub Pages can't send real redirects, so each gets a tiny page that
+// declares the target as canonical and forwards the visitor (Google treats this as a redirect).
+(c.site.redirects || []).forEach((r) => {
+  const from = String(r.from || '').replace(/^\/+|\/+$/g, ''), to = String(r.to || '/');
+  if (!from || from === 'index.html') return;   // the real homepage file is never replaced
+  const target = /^https?:/.test(to) ? to : URL_.replace(/\/$/, '') + (to.startsWith('/') ? to : '/' + to);
+  const page = '<!doctype html><html lang="en"><meta charset="utf-8"><title>' + title + '</title><meta name="robots" content="noindex,follow">' +
+    '<link rel="canonical" href="' + a(target) + '"><meta http-equiv="refresh" content="0;url=' + a(target) + '">' +
+    '<script>location.replace(' + JSON.stringify(target) + ')</script><p><a href="' + a(target) + '">Continue to ' + a(brand.name) + '</a></p></html>';
+  fs.mkdirSync(path.join(out, from), {recursive: true}); fs.writeFileSync(path.join(out, from, 'index.html'), page);
+});
 cp('admin', 'admin'); cp('src/render.js', 'admin/render.js'); cp('src/a.css', 'admin/preview.css'); cp('src/map.svg.html', 'admin/map.svg.html');
 console.log('built dist/index.html', Math.round(html.length / 1024) + ' KB');

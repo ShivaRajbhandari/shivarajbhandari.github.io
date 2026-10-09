@@ -57,5 +57,11 @@
   "fonts": {
     "heading": "Fraunces",
     "body": "Inter"
-  }
+  },
+  "redirects": [
+    {
+      "from": "/home",
+      "to": "/"
+    }
+  ]
 }
