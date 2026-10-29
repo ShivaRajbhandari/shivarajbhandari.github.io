@@ -1,0 +1,693 @@
+{
+  "heading": "Idaho Climate Conversations",
+  "eyebrow": "Summer 2023 · All 44 counties",
+  "lede": "Two friends, one Prius, and a simple question for every Idaho county: what changes have you seen?",
+  "body": "In June 2023, my friend Jane Carney and I drove a Prius through all 44 Idaho counties and sat down with about three people in each one, including at least one person under 18. We asked how the climate had changed where they live and how it touches their families and communities. We didn’t argue. We listened.\n\nThe result is over 100 short conversations with Idahoans of all ages, from the Panhandle to the Snake River Plain. Some people are alarmed, some are skeptical, and many simply describe what they have seen: the snowpack, the smoke, the water. The project was funded by a community GoFundMe. Mentor: Dr. Aly Bean.",
+  "summary": {
+    "id": "bgVphGLR8SA",
+    "dur": "3:25",
+    "label": "Watch the 3-minute preview",
+    "caption": "The trip in three minutes."
+  },
+  "videos_label": "The conversations, by county",
+  "channel_label": "Also on YouTube",
+  "channel_url": "https://www.youtube.com/@IdahoClimateConversations",
+  "counties": [
+    {
+      "name": "Ada County",
+      "videos": [
+        {
+          "id": "03jR_i6d3G8",
+          "dur": "3:23"
+        },
+        {
+          "id": "YRr1Ok9nRoE",
+          "dur": "3:03"
+        },
+        {
+          "id": "JWm2NS0jTr8",
+          "dur": "5:27"
+        },
+        {
+          "id": "ViNFOeGMtz8",
+          "dur": "1:33"
+        }
+      ]
+    },
+    {
+      "name": "Adams County",
+      "videos": [
+        {
+          "id": "r95YSMHbuQ4",
+          "dur": "4:47"
+        },
+        {
+          "id": "H_CJ_kmxoi0",
+          "dur": "6:03"
+        },
+        {
+          "id": "BXFuBVoTsFM",
+          "dur": "4:57"
+        }
+      ]
+    },
+    {
+      "name": "Bannock County",
+      "videos": [
+        {
+          "id": "ulKNwSJtiOc",
+          "dur": "4:08"
+        },
+        {
+          "id": "u23UzXFqJ1g",
+          "dur": "3:16"
+        },
+        {
+          "id": "gWLmtGyBmnM",
+          "dur": "1:46"
+        }
+      ]
+    },
+    {
+      "name": "Bear Lake County",
+      "videos": [
+        {
+          "id": "NETN5GAdnDw",
+          "dur": "4:11"
+        },
+        {
+          "id": "JUO6p0yoyns",
+          "dur": "3:26"
+        },
+        {
+          "id": "NCCBgJTxbcQ",
+          "dur": "3:21"
+        }
+      ]
+    },
+    {
+      "name": "Benewah County",
+      "videos": [
+        {
+          "id": "gNwlLgRZJ20",
+          "dur": "3:15"
+        },
+        {
+          "id": "Ln06i1U-7iA",
+          "dur": "1:40"
+        },
+        {
+          "id": "me7_tSPnwvQ",
+          "dur": "2:35"
+        }
+      ]
+    },
+    {
+      "name": "Bingham County",
+      "videos": [
+        {
+          "id": "RuMoa7Tl75c",
+          "dur": "4:53"
+        },
+        {
+          "id": "KCvhggVf9FY",
+          "dur": "1:42"
+        },
+        {
+          "id": "HgIIAbDbEXA",
+          "dur": "1:40"
+        },
+        {
+          "id": "HNCny52sySs",
+          "dur": "1:54"
+        }
+      ]
+    },
+    {
+      "name": "Blaine County",
+      "videos": [
+        {
+          "id": "98IZt7YyBU0",
+          "dur": "4:22"
+        },
+        {
+          "id": "BV-rDQf8fXc",
+          "dur": "10:31"
+        },
+        {
+          "id": "HEYy1E4OEro",
+          "dur": "4:36"
+        }
+      ]
+    },
+    {
+      "name": "Boise County",
+      "videos": [
+        {
+          "id": "d7ZlPzKITys",
+          "dur": "5:02"
+        },
+        {
+          "id": "Rt036j00mDc",
+          "dur": "7:09"
+        },
+        {
+          "id": "dwbATsxVvzY",
+          "dur": "4:54"
+        }
+      ]
+    },
+    {
+      "name": "Bonner County",
+      "videos": [
+        {
+          "id": "iM5x6RicwDs",
+          "dur": "5:39"
+        },
+        {
+          "id": "YhqUT3PnMv8",
+          "dur": "6:53"
+        },
+        {
+          "id": "cevBSX9KqAQ",
+          "dur": "2:16"
+        }
+      ]
+    },
+    {
+      "name": "Bonneville County",
+      "videos": [
+        {
+          "id": "OVnNy5QsT04",
+          "dur": "2:10"
+        },
+        {
+          "id": "2CVBy7LnkPA",
+          "dur": "1:48"
+        },
+        {
+          "id": "LeY-lr1hLX4",
+          "dur": "1:34"
+        }
+      ]
+    },
+    {
+      "name": "Boundary County",
+      "videos": [
+        {
+          "id": "PnRGjbk2IUg",
+          "dur": "2:49"
+        },
+        {
+          "id": "AdyBlEPc1Ck",
+          "dur": "4:39"
+        },
+        {
+          "id": "DqVRWAAffWw",
+          "dur": "4:00"
+        }
+      ]
+    },
+    {
+      "name": "Butte County",
+      "videos": [
+        {
+          "id": "C5ak9GwwJVk",
+          "dur": "8:33"
+        },
+        {
+          "id": "69JzJ0zGt5Q",
+          "dur": "2:56"
+        },
+        {
+          "id": "UmZDE0otuMY",
+          "dur": "3:12"
+        }
+      ]
+    },
+    {
+      "name": "Camas County",
+      "videos": [
+        {
+          "id": "KJjaFLznOWg",
+          "dur": "6:11"
+        },
+        {
+          "id": "F0lifAKxWHE",
+          "dur": "3:23"
+        },
+        {
+          "id": "fH4wbUGlJfs",
+          "dur": "1:27"
+        }
+      ]
+    },
+    {
+      "name": "Canyon County",
+      "videos": [
+        {
+          "id": "rIJkG8ufNhc",
+          "dur": "2:56"
+        },
+        {
+          "id": "2Li7oNlOVcg",
+          "dur": "3:56"
+        },
+        {
+          "id": "D5ne2wLnWUI",
+          "dur": "2:20"
+        }
+      ]
+    },
+    {
+      "name": "Caribou County",
+      "videos": [
+        {
+          "id": "einPP0G7GMs",
+          "dur": "1:36"
+        },
+        {
+          "id": "j5zujmKS57s",
+          "dur": "1:50"
+        },
+        {
+          "id": "UWhJEq9FplI",
+          "dur": "1:21"
+        }
+      ]
+    },
+    {
+      "name": "Cassia County",
+      "videos": [
+        {
+          "id": "_maHQzINIuc",
+          "dur": "1:35"
+        },
+        {
+          "id": "K66uIT30kug",
+          "dur": "1:56"
+        }
+      ]
+    },
+    {
+      "name": "Clark County",
+      "videos": [
+        {
+          "id": "EJOfK2j8_SM",
+          "dur": "6:55"
+        },
+        {
+          "id": "t_8LNDx2c2I",
+          "dur": "2:50"
+        },
+        {
+          "id": "PAugRcpBEL0",
+          "dur": "2:38"
+        }
+      ]
+    },
+    {
+      "name": "Custer County",
+      "videos": [
+        {
+          "id": "xUQSjpBbQyE",
+          "dur": "4:03"
+        },
+        {
+          "id": "j0ETKw35lhQ",
+          "dur": "3:59"
+        },
+        {
+          "id": "4cI4Zh2oBoE",
+          "dur": "3:45"
+        }
+      ]
+    },
+    {
+      "name": "Elmore County",
+      "videos": [
+        {
+          "id": "MXrwMn5mrmY",
+          "dur": "2:03"
+        },
+        {
+          "id": "MFq-cD0Yul0",
+          "dur": "1:05"
+        }
+      ]
+    },
+    {
+      "name": "Franklin County",
+      "videos": [
+        {
+          "id": "EjoSKcugFoU",
+          "dur": "4:52"
+        },
+        {
+          "id": "vEcYbEWA1o8",
+          "dur": "3:04"
+        },
+        {
+          "id": "E3tUcbMOvug",
+          "dur": "1:11"
+        },
+        {
+          "id": "KnzrVhjBoFI",
+          "dur": "1:44"
+        }
+      ]
+    },
+    {
+      "name": "Fremont County",
+      "videos": [
+        {
+          "id": "21zYhR6xM4E",
+          "dur": "9:32"
+        },
+        {
+          "id": "rVSmOh0uxMs",
+          "dur": "2:05"
+        },
+        {
+          "id": "sGEXvAUAXcs",
+          "dur": "2:10"
+        }
+      ]
+    },
+    {
+      "name": "Gooding County",
+      "videos": [
+        {
+          "id": "ax_ea_b8eqQ",
+          "dur": "3:10"
+        },
+        {
+          "id": "ZH2HboP9Z5E",
+          "dur": "2:56"
+        },
+        {
+          "id": "fLkzjVVPPz0",
+          "dur": "3:35"
+        },
+        {
+          "id": "5RDjYkGC0Cw",
+          "dur": "2:51"
+        }
+      ]
+    },
+    {
+      "name": "Jefferson County",
+      "videos": [
+        {
+          "id": "kch8asnkFdw",
+          "dur": "3:37"
+        },
+        {
+          "id": "qGkvMv4evRo",
+          "dur": "2:18"
+        }
+      ]
+    },
+    {
+      "name": "Jerome County",
+      "videos": [
+        {
+          "id": "_Yj41YwusAg",
+          "dur": "2:07"
+        },
+        {
+          "id": "GTbwCEfQDRQ",
+          "dur": "3:10"
+        }
+      ]
+    },
+    {
+      "name": "Kootenai County",
+      "videos": [
+        {
+          "id": "hPTyEj_dUXE",
+          "dur": "2:01"
+        },
+        {
+          "id": "LXOkBj_qcQY",
+          "dur": "3:23"
+        },
+        {
+          "id": "HUn7BZfz7MI",
+          "dur": "5:11"
+        },
+        {
+          "id": "5VPohvTH-_w",
+          "dur": "3:20"
+        }
+      ]
+    },
+    {
+      "name": "Latah County",
+      "videos": [
+        {
+          "id": "VyDs1KBzmGY",
+          "dur": "6:19"
+        },
+        {
+          "id": "urhxCUuvzGQ",
+          "dur": "1:35"
+        },
+        {
+          "id": "5_ay2y-amZA",
+          "dur": "3:53"
+        }
+      ]
+    },
+    {
+      "name": "Lemhi County",
+      "videos": [
+        {
+          "id": "p5VgruceA94",
+          "dur": "1:48"
+        },
+        {
+          "id": "eNV8y4c9wvQ",
+          "dur": "2:28"
+        },
+        {
+          "id": "zctuqjz7X2I",
+          "dur": "4:31"
+        }
+      ]
+    },
+    {
+      "name": "Lincoln County",
+      "videos": [
+        {
+          "id": "kG3RMtBIQY4",
+          "dur": "1:46"
+        },
+        {
+          "id": "rT9MygpebiA",
+          "dur": "1:38"
+        },
+        {
+          "id": "RgSrKm1tL78",
+          "dur": "2:26"
+        }
+      ]
+    },
+    {
+      "name": "Madison County",
+      "videos": [
+        {
+          "id": "gofauHKX3Ow",
+          "dur": "6:47"
+        },
+        {
+          "id": "28KnCKHFhbw",
+          "dur": "4:03"
+        },
+        {
+          "id": "ZjWxIzob-Wg",
+          "dur": "4:57"
+        }
+      ]
+    },
+    {
+      "name": "Minidoka County",
+      "videos": [
+        {
+          "id": "F0kaL4WUATM",
+          "dur": "2:26"
+        },
+        {
+          "id": "__8e0BuT82w",
+          "dur": "1:35"
+        },
+        {
+          "id": "NVeviIM_85Y",
+          "dur": "2:00"
+        }
+      ]
+    },
+    {
+      "name": "Nez Perce County",
+      "videos": [
+        {
+          "id": "YVpuf3DbT4U",
+          "dur": "4:59"
+        },
+        {
+          "id": "JHKDVp1DE5k",
+          "dur": "2:50"
+        },
+        {
+          "id": "K-cKuaw7TRE",
+          "dur": "1:09"
+        }
+      ]
+    },
+    {
+      "name": "Oneida County",
+      "videos": [
+        {
+          "id": "oayS7fHUbok",
+          "dur": "11:14"
+        },
+        {
+          "id": "fkNP6dxTCfU",
+          "dur": "3:14"
+        },
+        {
+          "id": "CRu8V01jNX0",
+          "dur": "3:56"
+        }
+      ]
+    },
+    {
+      "name": "Owyhee County",
+      "videos": [
+        {
+          "id": "2R_K6NSk6uk",
+          "dur": "1:49"
+        },
+        {
+          "id": "3MTIPiEtd2c",
+          "dur": "1:45"
+        }
+      ]
+    },
+    {
+      "name": "Payette County",
+      "videos": [
+        {
+          "id": "jLiMH05DIJs",
+          "dur": "7:14"
+        },
+        {
+          "id": "PrMLsSAks4Y",
+          "dur": "6:46"
+        },
+        {
+          "id": "mkLrcnRK--A",
+          "dur": "1:49"
+        }
+      ]
+    },
+    {
+      "name": "Power County",
+      "videos": [
+        {
+          "id": "iGJ4j9Hlvzg",
+          "dur": "4:18"
+        },
+        {
+          "id": "92fkJxhUss8",
+          "dur": "1:36"
+        },
+        {
+          "id": "wBpdVuvlFRQ",
+          "dur": "2:18"
+        }
+      ]
+    },
+    {
+      "name": "Shoshone County",
+      "videos": [
+        {
+          "id": "lWK3qdztFuA",
+          "dur": "2:24"
+        },
+        {
+          "id": "cpuaQbqS3yE",
+          "dur": "2:00"
+        },
+        {
+          "id": "aUFv8NhFuaU",
+          "dur": "1:17"
+        }
+      ]
+    },
+    {
+      "name": "Teton County",
+      "videos": [
+        {
+          "id": "y4q-VFj3LJY",
+          "dur": "2:54"
+        },
+        {
+          "id": "_ph5hqCDZj4",
+          "dur": "3:11"
+        },
+        {
+          "id": "YtjhUQClQwg",
+          "dur": "2:16"
+        }
+      ]
+    },
+    {
+      "name": "Twin Falls County",
+      "videos": [
+        {
+          "id": "qr69Gow7fRc",
+          "dur": "5:06"
+        },
+        {
+          "id": "xBznAUPJI-E",
+          "dur": "2:41"
+        },
+        {
+          "id": "wgEkmRAMBTk",
+          "dur": "1:31"
+        }
+      ]
+    },
+    {
+      "name": "Valley County",
+      "videos": [
+        {
+          "id": "ESn2VI-WDss",
+          "dur": "3:32"
+        },
+        {
+          "id": "j0e4lYCoN7I",
+          "dur": "5:30"
+        }
+      ]
+    },
+    {
+      "name": "Washington County",
+      "videos": [
+        {
+          "id": "9LfpJCBbZa8",
+          "dur": "3:31"
+        },
+        {
+          "id": "9stKPyeadlQ",
+          "dur": "2:48"
+        },
+        {
+          "id": "yxuaRVAO5kc",
+          "dur": "2:07"
+        }
+      ]
+    }
+  ]
+}

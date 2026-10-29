@@ -90,12 +90,6 @@
     "label": "Earlier",
     "items": [
       {
-        "label": "Idaho Climate Conversations, 2023",
-        "url": "https://www.youtube.com/@IdahoClimateConversations",
-        "tip_title": "Idaho Climate Conversations, June 2023.",
-        "tip_text": "With a friend, I drove a Prius through all 44 Idaho counties in two weeks and recorded around 130 conversations with residents about the climate changes they were seeing. Funded by a community GoFundMe. Mentor: Dr. Aly Bean. Click to watch."
-      },
-      {
         "label": "Meridian housing study, 2023",
         "url": "https://www.idahostatesman.com/news/local/community/west-ada/article275278751.html",
         "tip_title": "Meridian housing study, spring 2023.",
@@ -103,5 +97,12 @@
       }
     ]
   },
-  "photo_after": "/img/IMG_8155.jpg"
+  "photo_after": "/img/IMG_8155.jpg",
+  "feature": {
+    "tag": "A statewide project · Summer 2023",
+    "title": "Idaho Climate Conversations",
+    "body": "With my friend Jane Carney, I drove a Prius through all 44 Idaho counties and interviewed about three people in each one, including at least one person under 18, about the changes they have seen in the climate. Every conversation is online, by county.",
+    "link_text": "Watch the conversations",
+    "link_url": "/climateconversations/"
+  }
 }

@@ -50,6 +50,7 @@
       return '<article class="paper reveal"><p class="tag">' + esc(p.tag) + '</p>' + (p.award ? '<p class="award"><span aria-hidden="true">&#9733;</span> ' + esc(p.award) + '</p>' : '') + '<h3>' + esc(p.title) + '</h3><p>' + md(p.body) + '</p>' +
         (p.advisors ? '<p class="advisors">' + esc(p.advisors) + '</p>' : '') + (p.link_url ? '<a href="' + esc(p.link_url) + '">' + esc(p.link_text) + ' &rarr;</a>' : '') + '</article>'; }).join('') + '</div>' +
       '<article class="teach reveal"><p class="tag">' + esc(c.tag) + '</p><h3>' + esc(c.title) + '</h3><p>' + md(c.body) + '</p>' + (c.advisors ? '<p class="advisors">' + esc(c.advisors) + '</p>' : '') + '</article>' +
+      (d.feature && d.feature.title ? '<article class="teach feature reveal"><p class="tag">' + esc(d.feature.tag) + '</p><h3>' + esc(d.feature.title) + '</h3><p>' + md(d.feature.body) + '</p>' + (d.feature.link_url ? '<a class="more" href="' + esc(d.feature.link_url) + '">' + esc(d.feature.link_text) + ' &rarr;</a>' : '') + '</article>' : '') +
       '<div class="mapblock reveal"><h3>' + esc(map.heading) + '</h3>' + (mapSvg || '') + '<ul class="places">' + (map.places || []).map(function (p) {
         return '<li data-c="' + esc(p.country) + '"><strong>' + esc(p.country) + '</strong><span>' + md(p.text) + '</span></li>'; }).join('') + '</ul></div>' +
       '<div class="classes reveal"><h3>' + esc(cls.heading) + '</h3><ul>' + (cls.items || []).map(function (i) {
@@ -82,6 +83,23 @@
   };
   R.notFoundBody = function (c) {
     return [R.header(c.site, '/'), '<main id="main">', R.notFound(c.notfound), '</main>', R.footer(c.site, '/')].join('\n\n');
+  };
+  // Video facade: a thumbnail that loads the YouTube player only when clicked (keeps ~120 videos fast).
+  var vid = function (v, label, big) {
+    return '<button type="button" class="vid' + (big ? ' big' : '') + '" data-id="' + esc(v.id) + '" aria-label="' + esc(label) + '"><img loading="lazy" src="https://i.ytimg.com/vi/' + esc(v.id) + '/mqdefault.jpg" alt=""><span class="play" aria-hidden="true"></span>' + (v.dur ? '<span class="dur">' + esc(v.dur) + '</span>' : '') + '</button>';
+  };
+  var slug = function (n) { return String(n).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); };
+  R.climate = function (d) {
+    var cs = d.counties || [], sm = d.summary || {};
+    return '<section class="cc-hero" id="top"><p class="eyebrow">' + esc(d.eyebrow) + '</p><h1>' + esc(d.heading) + '</h1><p class="lede">' + esc(d.lede) + '</p></section>' +
+      '<section class="cc-intro"><div class="cc-text">' + paras(d.body) + '</div>' + (sm.id ? '<figure class="cc-summary">' + vid(sm, sm.label, true) + '<figcaption>' + esc(sm.caption) + '</figcaption></figure>' : '') + '</section>' +
+      '<section class="cc-index" aria-label="Counties"><h2>' + esc(d.videos_label) + '</h2><ul>' + cs.map(function (c) { return '<li><a href="#' + slug(c.name) + '">' + esc(c.name.replace(/ County$/, '')) + '</a></li>'; }).join('') + '</ul></section>' +
+      cs.map(function (c) {
+        return '<section class="county" id="' + slug(c.name) + '"><h3>' + esc(c.name) + '</h3><div class="vids">' + (c.videos || []).map(function (v, i) { return vid(v, 'Play interview ' + (i + 1) + ' from ' + c.name); }).join('') + '</div></section>'; }).join('') +
+      '<p class="cc-more"><a href="' + esc(d.channel_url) + '">' + esc(d.channel_label) + ' &rarr;</a></p>';
+  };
+  R.climateBody = function (c) {
+    return [R.header(c.site, '/'), '<main id="main" class="cc">', R.climate(c.climate), '</main>', R.footer(c.site, '/')].join('\n\n');
   };
   R.body = function (c, mapSvg) {
     return [R.header(c.site), '<main id="main">', R.hero(c.home), R.now(c.now), band(c.now.photo_after), R.about(c.about), R.building(c.building), R.research(c.research, mapSvg),

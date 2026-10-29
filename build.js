@@ -4,7 +4,7 @@ const fs = require('fs'), path = require('path');
 const R = require('./src/render.js');
 const root = __dirname, out = path.join(root, 'dist');
 const rd = (f) => fs.readFileSync(path.join(root, f), 'utf8');
-const names = ['site', 'home', 'now', 'about', 'building', 'research', 'recognition', 'contact', 'notfound'];
+const names = ['site', 'home', 'now', 'about', 'building', 'research', 'recognition', 'contact', 'notfound', 'climate'];
 const c = {}; names.forEach((n) => { c[n] = JSON.parse(rd('content/' + n + '.json')); });
 const ORIGIN = rd('CNAME').trim(); const URL_ = 'https://' + ORIGIN + '/';
 const mapSvg = rd('src/map.svg.html');
@@ -61,11 +61,20 @@ const bs = html.indexOf('<body>\n') + 7, be = html.indexOf('<script>\n', bs);
 fs.writeFileSync(path.join(out, '404.html'), (html.slice(0, bs) + R.notFoundBody(c) + '\n' + html.slice(be))
   .replace(`<link rel="canonical" href="${URL_}">`, '<meta name="robots" content="noindex">')
   .replace(/<script type="application\/ld\+json">.*?<\/script>\n/, ''));
+// Idaho Climate Conversations: /climateconversations/ (same design, plus a click-to-play video script)
+const cc = c.climate, ccTitle = a(cc.heading + ' | ' + brand.name), ccUrl = URL_ + 'climateconversations/', ccDesc = a(cc.lede);
+let ccHtml = html.slice(0, bs) + R.climateBody(c) + '\n' + html.slice(be);
+ccHtml = ccHtml.replace(/<title>.*?<\/title>/, '<title>' + ccTitle + '</title>').replace(/<meta name="description" content=".*?">/, '<meta name="description" content="' + ccDesc + '">')
+  .replace(/<meta property="og:title" content=".*?">/, '<meta property="og:title" content="' + ccTitle + '">').replace(/<meta property="og:description" content=".*?">/, '<meta property="og:description" content="' + ccDesc + '">')
+  .replace(/<meta property="og:url" content=".*?">/, '<meta property="og:url" content="' + ccUrl + '">').replace(/<meta name="twitter:title" content=".*?">/, '<meta name="twitter:title" content="' + ccTitle + '">')
+  .replace(/<meta name="twitter:description" content=".*?">/, '<meta name="twitter:description" content="' + ccDesc + '">').replace(`<link rel="canonical" href="${URL_}">`, `<link rel="canonical" href="${ccUrl}">`)
+  .replace(/<script type="application\/ld\+json">.*?<\/script>\n/, '').replace('</body>', '<script>\n' + rd('src/video.js').trim() + '\n</script>\n</body>');
+fs.mkdirSync(path.join(out, 'climateconversations'), {recursive: true}); fs.writeFileSync(path.join(out, 'climateconversations', 'index.html'), ccHtml);
 cp('img', 'img'); cp('CNAME', 'CNAME'); cp('content', 'content');
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
 fs.writeFileSync(path.join(out, 'googlec29395e74e8d042a.html'), 'google-site-verification: googlec29395e74e8d042a.html');
 fs.writeFileSync(path.join(out, 'robots.txt'), 'User-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ' + URL_ + 'sitemap.xml\n');
-fs.writeFileSync(path.join(out, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>' + URL_ + '</loc><lastmod>' + new Date().toISOString().slice(0, 10) + '</lastmod></url>\n</urlset>\n');
+fs.writeFileSync(path.join(out, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>' + URL_ + '</loc><lastmod>' + new Date().toISOString().slice(0, 10) + '</lastmod></url>\n  <url><loc>' + ccUrl + '</loc><lastmod>' + new Date().toISOString().slice(0, 10) + '</lastmod></url>\n</urlset>\n');
 // Old or duplicate addresses -> homepage. GitHub Pages can't send real redirects, so each gets a tiny page that
 // declares the target as canonical and forwards the visitor (Google treats this as a redirect).
 (c.site.redirects || []).forEach((r) => {
