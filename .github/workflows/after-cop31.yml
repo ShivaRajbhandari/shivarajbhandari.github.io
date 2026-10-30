@@ -1,0 +1,31 @@
+name: COP31 tense change
+
+# COP31 (Antalya) ends 20 Nov 2026. On 21 Nov, switch the map entry from
+# "Attending" to "Attended", then rebuild the site. Runs yearly but is a no-op
+# once changed, and does nothing before 21 Nov 2026.
+on:
+  schedule:
+    - cron: "0 14 21 11 *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Change Attending to Attended
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(date -u +%F)" \< "2026-11-21" ]; then echo "COP31 not over yet"; exit 0; fi
+          sed -i 's/Attending the COP31 U\.N\. climate summit/Attended the COP31 U.N. climate summit/' content/research.json
+          if git diff --quiet; then echo "nothing to change"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "COP31 is over: Attending -> Attended"
+          git push
+          gh workflow run pages.yml --ref main
