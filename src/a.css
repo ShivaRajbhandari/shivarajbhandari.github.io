@@ -236,3 +236,11 @@ body{overflow-x:clip}
 @media (max-width:900px){.cc-intro{grid-template-columns:1fr}}
 .back{display:inline-block;margin-bottom:26px;font-size:14px;font-weight:600;text-decoration:none;color:var(--accent);padding:7px 14px;border:1px solid var(--accent);border-radius:99px}
 .back:hover{background:var(--accent);color:var(--bg)}
+/* Map places: hover/tap popups instead of a visible list (the list stays in the page for screen readers) */
+.mapblock{position:relative}
+.places{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;padding:0!important;overflow:hidden!important;clip:rect(0 0 0 0)!important;border:0!important;white-space:nowrap}
+.map-pop{position:absolute;z-index:6;width:min(280px,86%);background:var(--paper);color:var(--ink);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:12px 14px;box-shadow:0 14px 30px -14px rgba(0,0,0,.45);font-size:14px;line-height:1.45}
+.map-pop[hidden]{display:none}
+.map-pop strong{display:block;font-family:var(--serif);font-size:17px;font-weight:600;margin-bottom:2px}
+.map-pop span{color:var(--muted)}.map-pop a{color:var(--accent);font-weight:600}
+.map .pin:focus-visible{outline:none}.map .pin:focus-visible .dot{stroke:var(--ink);stroke-width:2.5}
