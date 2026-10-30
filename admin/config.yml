@@ -143,7 +143,7 @@ collections:
                 summary: "{{fields.country}}"
                 hint: "The map highlights these six countries only. To add another country to the map itself, ask Claude."
                 fields:
-                  - {label: Country, name: country, widget: select, options: [Mexico, Peru, Chile, Uruguay, Nepal, Egypt]}
+                  - {label: Country, name: country, widget: select, options: [Mexico, Peru, Chile, Uruguay, Nepal, Egypt, Idaho]}
                   - {label: Text, name: text, widget: text}
           - label: "Classes"
             name: classes

@@ -67,14 +67,14 @@ for tt, aa, keep in ((t110, a110, ('Chile', 'Peru', 'Mexico', 'Egypt')), (t50, a
         n = g['properties']['name']
         if n in keep: high[n] = path(polys(g, aa))
 
-pins = {'Nepal': (84.2, 28.3), 'Chile': (-70.7, -33.0), 'Uruguay': (-55.9, -32.8), 'Peru': (-75.0, -9.5), 'Mexico': (-102.0, 23.0), 'Egypt': (34.3, 27.9)}
+pins = {'Nepal': (84.2, 28.3), 'Chile': (-70.7, -33.0), 'Uruguay': (-55.9, -32.8), 'Peru': (-75.0, -9.5), 'Mexico': (-102.0, 23.0), 'Egypt': (34.3, 27.9), 'Idaho': (-114.7, 44.4)}
 # viewBox: crop to lat 60N .. 57S, lon -130..150 (drops Antarctica, most Arctic)
 xs = [P(-170, 0)[0], P(186, 0)[0]]
 y_top, y_bot = P(0, 83)[1], P(0, -57)[1]
 vb = (xs[0], y_top, xs[1]-xs[0], y_bot-y_top)
 out = [f'<svg class="map" viewBox="{vb[0]:.0f} {vb[1]:.0f} {vb[2]:.0f} {vb[3]:.0f}" role="img" aria-labelledby="map-t map-d" xmlns="http://www.w3.org/2000/svg">',
-       '<title id="map-t">Countries where Shiva&#8217;s work has taken him</title>',
-       '<desc id="map-d">A world map with Mexico, Peru, Chile, Uruguay, Nepal and Egypt highlighted.</desc>',
+       '<title id="map-t">Places where Shiva&#8217;s work has taken him</title>',
+       '<desc id="map-d">A world map with Mexico, Peru, Chile, Uruguay, Nepal and Egypt highlighted, and a pin in Idaho.</desc>',
        f'<path class="land" d="{"".join(back)}"/>']
 for n in HIGH:
     cls = 'hl'
