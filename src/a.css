@@ -244,13 +244,13 @@ body{overflow-x:clip}
 .map-pop strong{display:block;font-family:var(--serif);font-size:17px;font-weight:600;margin-bottom:2px}
 .map-pop span{color:var(--muted)}.map-pop a{color:var(--accent);font-weight:600}
 .map .pin:focus-visible{outline:none}.map .pin:focus-visible .dot{stroke:var(--ink);stroke-width:2.5}
-.idwrap{position:relative;max-width:420px;margin:0 auto}
+.idwrap{position:relative;max-width:280px;margin:0 auto}
 .idmap{display:block;width:100%;height:auto}
-.idmap .cty{fill:var(--accent);fill-opacity:.28;stroke:var(--paper);stroke-width:1.2;stroke-linejoin:round;cursor:pointer;transition:fill-opacity .15s;outline:none}
-.idmap .cty:hover,.idmap .cty:focus-visible{fill-opacity:.8}
-.idmap .cty:focus-visible{stroke:var(--ink);stroke-width:2}
-.idmap .cty.none{fill:var(--muted);fill-opacity:.15;cursor:default}
-.idmap .cty.none:hover{fill-opacity:.25}
+.idmap .cty{fill:var(--river);stroke:var(--bg);stroke-width:.8;stroke-linejoin:round;cursor:pointer;transition:fill .2s;outline:none}
+.idmap .cty:hover,.idmap .cty:focus-visible{fill:var(--accent)}
+.idmap .cty:focus-visible{stroke:var(--ink);stroke-width:1.5}
+.idmap .cty.none{fill:color-mix(in srgb,var(--ink) 11%,var(--bg));cursor:default}
+.idmap .cty.none:hover{fill:color-mix(in srgb,var(--ink) 18%,var(--bg))}
 .idpop{width:auto;min-width:130px;pointer-events:none;padding:8px 12px}
 .idpop strong{font-size:16px;margin:0}
 .idnote{text-align:center;color:var(--muted);font-size:14px;margin-top:10px}
