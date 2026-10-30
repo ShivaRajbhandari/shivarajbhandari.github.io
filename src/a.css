@@ -234,3 +234,5 @@ body{overflow-x:clip}
 .dur{position:absolute;right:8px;bottom:8px;background:rgba(0,0,0,.78);color:#fff;font-size:12px;padding:1px 6px;border-radius:4px}
 .cc-more{padding:40px 0 10px;border-top:1px solid var(--line);margin-top:34px}.cc-more a{font-weight:600;color:var(--accent);text-decoration:none}
 @media (max-width:900px){.cc-intro{grid-template-columns:1fr}}
+.back{display:inline-block;margin-bottom:26px;font-size:14px;font-weight:600;text-decoration:none;color:var(--accent);padding:7px 14px;border:1px solid var(--accent);border-radius:99px}
+.back:hover{background:var(--accent);color:var(--bg)}

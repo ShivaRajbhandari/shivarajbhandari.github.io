@@ -91,7 +91,7 @@
   var slug = function (n) { return String(n).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); };
   R.climate = function (d) {
     var cs = d.counties || [], sm = d.summary || {};
-    return '<section class="cc-hero" id="top"><p class="eyebrow">' + esc(d.eyebrow) + '</p><h1>' + esc(d.heading) + '</h1><p class="lede">' + esc(d.lede) + '</p></section>' +
+    return '<section class="cc-hero" id="top"><a class="back" href="/">&larr; ' + esc(d.back_label || 'Back to home') + '</a><p class="eyebrow">' + esc(d.eyebrow) + '</p><h1>' + esc(d.heading) + '</h1><p class="lede">' + esc(d.lede) + '</p></section>' +
       '<section class="cc-intro"><div class="cc-text">' + paras(d.body) + '</div>' + (sm.id ? '<figure class="cc-summary">' + vid(sm, sm.label, true) + '<figcaption>' + esc(sm.caption) + '</figcaption></figure>' : '') + '</section>' +
       '<section class="cc-index" aria-label="Counties"><h2>' + esc(d.videos_label) + '</h2><ul>' + cs.map(function (c) { return '<li><a href="#' + slug(c.name) + '">' + esc(c.name.replace(/ County$/, '')) + '</a></li>'; }).join('') + '</ul></section>' +
       cs.map(function (c) {
