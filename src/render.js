@@ -89,17 +89,17 @@
     return '<button type="button" class="vid' + (big ? ' big' : '') + '" data-id="' + esc(v.id) + '" aria-label="' + esc(label) + '"><img loading="lazy" src="https://i.ytimg.com/vi/' + esc(v.id) + '/mqdefault.jpg" alt=""><span class="play" aria-hidden="true"></span>' + (v.dur ? '<span class="dur">' + esc(v.dur) + '</span>' : '') + '</button>';
   };
   var slug = function (n) { return String(n).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); };
-  R.climate = function (d) {
+  R.climate = function (d, mapSvg) {
     var cs = d.counties || [], sm = d.summary || {};
     return '<section class="cc-hero" id="top"><a class="back" href="/">&larr; ' + esc(d.back_label || 'Back to home') + '</a><p class="eyebrow">' + esc(d.eyebrow) + '</p><h1>' + esc(d.heading) + '</h1><p class="lede">' + esc(d.lede) + '</p></section>' +
       '<section class="cc-intro"><div class="cc-text">' + paras(d.body) + '</div>' + (sm.id ? '<figure class="cc-summary">' + vid(sm, sm.label, true) + '<figcaption>' + esc(sm.caption) + '</figcaption></figure>' : '') + '</section>' +
-      '<section class="cc-index" aria-label="Counties"><h2>' + esc(d.videos_label) + '</h2><ul>' + cs.map(function (c) { return '<li><a href="#' + slug(c.name) + '">' + esc(c.name.replace(/ County$/, '')) + '</a></li>'; }).join('') + '</ul></section>' +
+      '<section class="cc-index" aria-label="Counties"><h2>' + esc(d.videos_label) + '</h2><div class="idwrap">' + (mapSvg || '') + '<div class="map-pop idpop" role="status" hidden></div></div><p class="idnote">Hover over a county to see its name, and click it to jump to its videos.</p></section>' +
       cs.map(function (c) {
         return '<section class="county" id="' + slug(c.name) + '"><h3>' + esc(c.name) + '</h3><div class="vids">' + (c.videos || []).map(function (v, i) { return vid(v, 'Play interview ' + (i + 1) + ' from ' + c.name); }).join('') + '</div></section>'; }).join('') +
       '<p class="cc-more"><a href="' + esc(d.channel_url) + '">' + esc(d.channel_label) + ' &rarr;</a></p>';
   };
-  R.climateBody = function (c) {
-    return [R.header(c.site, '/'), '<main id="main" class="cc">', R.climate(c.climate), '</main>', R.footer(c.site, '/')].join('\n\n');
+  R.climateBody = function (c, mapSvg) {
+    return [R.header(c.site, '/'), '<main id="main" class="cc">', R.climate(c.climate, mapSvg), '</main>', R.footer(c.site, '/')].join('\n\n');
   };
   R.body = function (c, mapSvg) {
     return [R.header(c.site), '<main id="main">', R.hero(c.home), R.now(c.now), band(c.now.photo_after), R.about(c.about), R.building(c.building), R.research(c.research, mapSvg),

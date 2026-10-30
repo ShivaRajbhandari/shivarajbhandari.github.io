@@ -63,12 +63,12 @@ fs.writeFileSync(path.join(out, '404.html'), (html.slice(0, bs) + R.notFoundBody
   .replace(/<script type="application\/ld\+json">.*?<\/script>\n/, ''));
 // Idaho Climate Conversations: /climateconversations/ (same design, plus a click-to-play video script)
 const cc = c.climate, ccTitle = a(cc.heading + ' | ' + brand.name), ccUrl = URL_ + 'climateconversations/', ccDesc = a(cc.lede);
-let ccHtml = html.slice(0, bs) + R.climateBody(c) + '\n' + html.slice(be);
+let ccHtml = html.slice(0, bs) + R.climateBody(c, rd('src/idaho.svg.html')) + '\n' + html.slice(be);
 ccHtml = ccHtml.replace(/<title>.*?<\/title>/, '<title>' + ccTitle + '</title>').replace(/<meta name="description" content=".*?">/, '<meta name="description" content="' + ccDesc + '">')
   .replace(/<meta property="og:title" content=".*?">/, '<meta property="og:title" content="' + ccTitle + '">').replace(/<meta property="og:description" content=".*?">/, '<meta property="og:description" content="' + ccDesc + '">')
   .replace(/<meta property="og:url" content=".*?">/, '<meta property="og:url" content="' + ccUrl + '">').replace(/<meta name="twitter:title" content=".*?">/, '<meta name="twitter:title" content="' + ccTitle + '">')
   .replace(/<meta name="twitter:description" content=".*?">/, '<meta name="twitter:description" content="' + ccDesc + '">').replace(`<link rel="canonical" href="${URL_}">`, `<link rel="canonical" href="${ccUrl}">`)
-  .replace(/<script type="application\/ld\+json">.*?<\/script>\n/, '').replace('</body>', '<script>\n' + rd('src/video.js').trim() + '\n</script>\n</body>');
+  .replace(/<script type="application\/ld\+json">.*?<\/script>\n/, '').replace('</body>', '<script>\n' + rd('src/video.js').trim() + '\n' + rd('src/idmap.js').trim() + '\n</script>\n</body>');
 fs.mkdirSync(path.join(out, 'climateconversations'), {recursive: true}); fs.writeFileSync(path.join(out, 'climateconversations', 'index.html'), ccHtml);
 cp('img', 'img'); cp('CNAME', 'CNAME'); cp('content', 'content');
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
